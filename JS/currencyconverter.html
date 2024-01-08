@@ -1,0 +1,121 @@
+
+Conversation opened. 1 unread message. 
+
+Skip to content
+Using Gmail with screen readers
+in:sent 
+7 of 48
+currency convr
+Inbox
+
+Chitra Gour <chitragour1313@gmail.com>
+Tue, Dec 12, 2023, 11:07 AM
+to me
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <script>
+        function cal()
+        {
+            let data=document.getElementById("input").value
+            let d1=document.getElementById("op1").value
+            let d2=document.getElementById("op2").value
+            let result;
+
+            if(d1==1)
+            {
+                if(d2==1) result=data
+                if(d2==2) result=data*1.08
+                if(d2==3) result=data*100
+                if(d2==4) result=data*0.86
+                if(d2==5) result=data*89.77
+                if(d2==6) result=data*7.66
+            }
+            if(d1==2)
+            {
+                if(d2==1) result=data*0.93
+                if(d2==2) result=data
+                if(d2==3) result=data*100
+                if(d2==4) result=data*0.80
+                if(d2==5) result=data*83.38
+                if(d2==6) result=data*7.11
+            }
+            if(d1==3)
+            {
+                if(d2==1) result=data*0.0011
+                if(d2==2) result=data*0.01
+                if(d2==3) result=data
+                if(d2==4) result=data*0.000040
+                if(d2==5) result=data*0.0042
+                if(d2==6) result=data*0.000359
+            }
+            if(d1==4)
+            {
+                if(d2==1) result=data*1.17
+                if(d2==2) result=data*1.26
+                if(d2==3) result=data*25,144.34
+                if(d2==4) result=data
+                if(d2==5) result=data*104.85
+                if(d2==6) result=data*8.94
+            }
+            if(d1==5)
+            {
+                if(d2==1) result=data*0.011
+                if(d2==2) result=data*0.012
+                if(d2==3) result=data*239.96
+                if(d2==4) result=data*0.0095
+                if(d2==5) result=data
+                if(d2==6) result=data*0.086
+            }
+            if(d1==6)
+            {
+                if(d2==1) result=data*0.13
+                if(d2==2) result=data*0.14
+                if(d2==3) result=data*2,787.95
+                if(d2==4) result=data*0.11
+                if(d2==5) result=data*11.62
+                if(d2==6) result=data
+            }
+
+            document.getElementById("ans").innerHTML="<h2>"+result+"</h2>"
+        }
+
+    </script>
+</head>
+<body>
+    <h3>CURRENCY CONVERTER</h3>
+    <b>Enter Currency</b> <input type="number" id="input" value="0"/>
+    <br>
+    <br>
+    <b>Input Currency :</b>
+    <select id="op1">
+        <option  style="font-size: medium;">select currency from</option>
+        <option value="1" style="font-size: large;">&#8356</option> euro
+        <option value="2" style="font-size: large;">&#x24</option> dollar
+        <option value="3" style="font-size: large;">&#xa2</option> cent
+        <option value="4" style="font-size: large;">&#xa3</option> pound
+        <option value="5" style="font-size: large;">&#x20B9</option> Ruppee
+        <option value="6" style="font-size: large;">&#x5143</option> Yuan
+    </select>
+    <br>
+    <br>
+    <b>Converted Currency :</b>
+    <select id="op2" onclick="cal()">
+        <option style="font-size: medium;">select currency to</option>
+        <option value="1" style="font-size: large;">&#8356</option> 
+        <option value="2" style="font-size: large;">&#x24</option>
+        <option value="3" style="font-size: large;">&#xa2</option>
+        <option value="4" style="font-size: large;">&#xa3</option>
+        <option value="5" style="font-size: large;">&#x20B9</option>
+        <option value="6" style="font-size: large;">&#x5143</option>
+    </select>
+    
+    <div>
+        <h3>Result is :</h3><h4 id="ans"></h4>
+    </div>
+</body>
+</html>

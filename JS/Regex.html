@@ -1,0 +1,53 @@
+
+Conversation opened. 1 unread message. 
+
+Skip to content
+Using Gmail with screen readers
+in:sent 
+4 of 48
+regex.html
+Inbox
+
+Chitra Gour <chitragour1313@gmail.com>
+Wed, Dec 13, 2023, 4:14 PM
+to me
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+    <script>
+        function check()
+        {
+            let pat_no=/^[0-9]{3}\-+[0-9]{3}\-+[0-9]{8}$/
+            let pat_email = /^[A-Za-z]+[A-Za-z0-9_]+[@]+[a-z]+\.com/
+            let pat_name= /^[A-Z]+[A-Za-z]+[" "]+[A-Z]+[A-Za-z]*/
+            let num = document.getElementById("no").value
+            let email=document.getElementById("email").value
+            let name=document.getElementById("name").value
+            let res_no = pat_no.test(num)
+            let res_mail = pat_email.test(email)
+            let res_name=pat_name.test(name)
+
+            if(res_no && res_mail && res_name)
+                document.getElementById("res").innerHTML = "Data Submitted"
+                
+            else
+                document.getElementById("res").innerHTML = "Invalid Input"
+
+        }
+    </script>
+</head>
+    <body>
+    <div align = "center">
+        <label>Contact : <input type="text" id = "no"></label>
+        <label>Email : <input type="text" id = "email"></label>
+        <label>Full Name : <input type="text" id = "name"></label>
+        
+        <input type="button" value = "Check" onclick="check()">
+        <h3 id = "res"></h3>
+    </div>
+    </body>
+</html>

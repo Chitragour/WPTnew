@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <script>
+        let intervalid
+        let cnt=0;
+        function start()
+        {
+            intervalid=setInterval(()=>{
+                cnt++
+                document.getElementById("time").innerHTML = `<b>${cnt}</b>`},1000)
+        }
+        function stop()
+        {
+            clearInterval(intervalid)
+        }
+        function reset()
+        {
+            cnt = 0;
+            document.getElementById("time").innerHTML = `<b>${cnt}</b>`
+        }
+    </script>
+</head>
+<body>
+    <h3 align="center">STOPWATCH</h3>
+    <div align="center">
+        <span><input type="button" value="start" onclick="start()"></span>
+    </div>
+    <div>
+        <h1 align = "center" id = "time"><b>0</b></h1>
+    </div>
+    <div align="center">
+        <span><input type="button" value="stop" onclick="stop()"></span>
+        <span><input type="button" value="reset" onclick="reset()"></span>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter names in array</title>
+    <script>
+        var arr=[]
+        var prev=""
+        function addToArray()
+        {
+            let arr=[]
+            let data=document.getElementById("name").value
+            arr.push(data)
+            let list=document.getElementById("list")
+             //console.log(arr)
+            for(i=0;i<arr.length;++i)
+            {
+                let li=document.createElement('li')
+                li.innerText=arr[i]
+                list.appendChild(li)
+                document.getElementById("name").value=''
+            }
+            
+        }
+       
+    </script>
+</head>
+<body align="center">
+    <div>
+        <label>Enter Name :<input type="text" id="name" onblur="addToArray()"/></label>
+    </div>
+    <div>
+        <ol align="center" id="list"></ol>
+    </div>
+</body>
+</html>

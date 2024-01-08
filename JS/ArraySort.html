@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Array Sort</title>
+    </head>
+    <script>
+        let arr=[]
+        function check()
+        {
+            let pat = /[0-9]+/
+            let data = document.getElementById("data").value
+            let re_data=pat.test(data)
+            if(re_data)
+            {
+                document.getElementById("ans").innerHTML="Data pushed into array"
+                arr.push(data)
+            }    
+            else
+            document.getElementById("ans").innerHTML="Invalid Data"
+
+        }
+        function sortdec()
+        {
+            arr.sort(function(a,b){return a-b})
+            arr.reverse()
+           // console.log(arr)
+           document.getElementById("ans").innerHTML=arr
+        }
+        function sortasc()
+        {
+            arr.sort(function(a,b){return a-b})
+           // console.log(arr)
+           document.getElementById("ans").innerHTML=arr
+        }
+    </script>
+    <body>
+        <div align = "center">
+            <label>Enter Number : <input type="text" id = "data" onblur="check()"></label>
+            <h3>Select Option to Sort</h3>
+            <label>Ascending : <input type="radio" name = "type" onchange="sortasc()"></label>
+            <label>Decending : <input type="radio" name = "type" onchange="sortdec()"></label>
+            <h3 id="ans"></h3>
+        </div>
+    </body>
+</html>

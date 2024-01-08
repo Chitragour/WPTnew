@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocumentTitle</title>
+    <script>
+        function convo()
+        {
+            let data1=document.getElementById("fn").value
+            let data2=document.getElementById("ln").value
+            let m=document.getElementById("m").checked
+            let f=document.getElementById("f").checked
+            let d1
+            let d2
+            let res
+            d1 = data1.charAt(0).toUpperCase()
+            d1 = d1+data1.substring(1).toLowerCase()
+            d2 = data2.charAt(0).toUpperCase()
+            d2 = d2+data2.substring(1).toLowerCase()
+            if(m)
+            {
+                res = "Mr. "
+                res = res+d2+" "+d1
+            }
+            if(f)
+            {
+                res = "Madam "
+                res = res+d2+" "+d1
+            }
+            document.getElementById("res").innerHTML=res
+        }
+    </script>
+</head>
+<body>
+    <label>Enter First Name:<input type:"text" id="fn" ></label>
+    <label>Enter Last Name:<input type:"text" id="ln" ></label>
+
+    <label>Male :<input type="radio" onclick="convo()" id="m" name="format" /></label>
+    <label>Female :<input type="radio" onclick="convo()" id="f" name="format" /></label> 
+    <p>Result : <span id="res"></span></p>
+</body>
+</html>
