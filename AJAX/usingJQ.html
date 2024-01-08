@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>AJAX + JQ</title>
+    </head>
+    <script src="C:\WPT (Chitra_Raj)\jquery-3.6.0.js"></script>
+    <script>
+      $().ready(()=>
+      {
+        $("#btn").click(()=>
+        {
+           let uid=$("#uid").val()
+           $.get(`https://reqres.in/api/users/${uid}`,(resp,status)=>
+           {
+            console.log(status,resp)
+            $("#p1").html(`${resp.data.first_name} ${resp.data.last_name}`)
+            $("#img").html(`<img src="${resp.data.avatar}" width="250px" height="270px" alt="image not found"/>`)
+
+           })
+        })
+      })
+    </script>
+    <body align="center">
+        <div>
+            <label>Enter ID : <input type="number" id="uid"></label><br>
+            <br>
+            <input type="button" id="btn" value="Get Data from SERVER">
+            <h4 id="p1"></h3>
+            <div id="img">
+            </div>
+        </div>
+    </body>
+</html>

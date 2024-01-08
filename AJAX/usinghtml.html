@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX + JS</title>
+    <script>
+        function func()
+        {
+            let http=new XMLHttpRequest()
+
+            http.onload= function fun1(){
+                console.log(http.responseText)
+                let obj=JSON.parse(http.responseText)
+
+                document.getElementById("p1").innerHTML=`${obj.data.first_name} ${obj.data.last_name}`
+                document.getElementById("img").innerHTML=`<img src="${obj.data.avatar}" width="250px" height="270px" alt="image not found"/>`
+            }
+
+            let uid=document.getElementById("uid").value
+            http.open("GET",`https://reqres.in/api/users/${uid}`)
+            http.send()
+
+        }
+    </script>
+</head>
+<body align="center">
+   <h4 >Enter id :<input type="number" min="1" max="10" id="uid"/></h4>
+   <input type="button" onclick="func()" value="Get data from SERVER"/>
+   <br><br>
+   <p id="p1"></p>
+   <br><br>
+   <div id="img"></div>
+
+</body>
+</html>
